@@ -45,37 +45,25 @@ urllib.request.install_opener(opener)
 if check == False:
 	os.mkdir("saved")
 
-
-
-
-
 os.chdir("saved")
-
-
-
-
-
-
 
 
 def parsing():
 	
 	while True:
 
-
-
 		val = StringGenerator("[\d\w]{6}").render().lower()
 	
 		url = domlink + val
 	
-	#print(url)
+
 		r = requests.get(url,headers = user_agents)
 
 		if r.status_code == 200:
 			html = r.text
 			soup = BeautifulSoup(html, 'lxml')
-                            #  soup.find('meta', property='og:image', content="")
-#print(tds)
+                           
+
 		
 			try:
 				t = soup.find("img", crossorigin="anonymous", alt="Lightshot screenshot", id="screenshot-image")
@@ -85,9 +73,9 @@ def parsing():
 			except:
 				continue
 			name = link.split('/')[-1]
-		#print(name)
 		
-			#print(link.split("/")[0])
+		
+		
 			if link.split("/")[0] == "https:":
 			
 			
@@ -98,7 +86,7 @@ def parsing():
 
 				print(Fore.BLUE + "found: " + url + ". "+name+" saved to "+ os.getcwd())
 			
-		#urllib.request.urlretrieve(link, name)
+		
 #img class="no-click screenshot-image"
 
 
