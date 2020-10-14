@@ -43,15 +43,12 @@ if check == False:
 
 os.chdir("saved")
 
-
 def parsing():
 	
 	while True:
 
 		val = StringGenerator("[\d\w]{6}").render().lower()
-	
 		url = domlink + val
-	
 
 		r = requests.get(url,headers = user_agents)
 
@@ -62,13 +59,11 @@ def parsing():
 			try:
 				t = soup.find("img", crossorigin="anonymous", alt="Lightshot screenshot", id="screenshot-image")
 
-		
 				link = t["src"]
 			except:
 				continue
 			name = link.split('/')[-1]
-		
-		
+	
 		
 			if link.split("/")[0] == "https:":
 
