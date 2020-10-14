@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-
-
 from threading import Thread
 
 import os
@@ -15,8 +13,6 @@ import colorama
 from colorama import Fore, Style
 
 colorama.init()
-
-
 
 
 print(Fore.BLUE + '''
@@ -63,12 +59,10 @@ def parsing():
 			html = r.text
 			soup = BeautifulSoup(html, 'lxml')
                            
-
-		
 			try:
 				t = soup.find("img", crossorigin="anonymous", alt="Lightshot screenshot", id="screenshot-image")
 
-		#	
+		
 				link = t["src"]
 			except:
 				continue
@@ -77,19 +71,11 @@ def parsing():
 		
 		
 			if link.split("/")[0] == "https:":
-			
-			
-				
 
 				urllib.request.urlretrieve(link, name)
 				
 
 				print(Fore.BLUE + "found: " + url + ". "+name+" saved to "+ os.getcwd())
-			
-		
-#img class="no-click screenshot-image"
-
-
 
 for thrs in range(1, count):
 	thr = Thread(target = parsing)
