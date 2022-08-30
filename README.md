@@ -1,5 +1,7 @@
 # LSGrabber
- Grabber screenshots from LightShot
+
+Grabber of screenshots from LightShot
+
 Using:
 
 git clone https://github.com/restanse/LSGrabber.git
